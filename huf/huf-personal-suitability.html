@@ -1,0 +1,1492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>HUF Personal Suitability Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f5f1e8;
+    --ivory: #faf7f0;
+    --ink: #1a2332;
+    --deep: #0f1922;
+    --gold: #b08d4a;
+    --gold-soft: #d4b87a;
+    --gold-pale: #f0e4c8;
+    --rust: #8b3a1f;
+    --moss: #3d5142;
+    --line: #d9d2bf;
+    --muted: #5c6470;
+    --soft-bg: #eee8d8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    line-height: 1.55;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(rgba(26, 35, 50, 0.025) 1px, transparent 1px);
+    background-size: 18px 18px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .wrap {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 32px 22px 80px;
+    position: relative;
+    z-index: 1;
+  }
+
+  header.head {
+    text-align: center;
+    padding: 18px 0 28px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 36px;
+  }
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 14px;
+  }
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: clamp(34px, 6vw, 50px);
+    line-height: 1.04;
+    color: var(--deep);
+    letter-spacing: -0.01em;
+  }
+  h1 em {
+    font-style: italic;
+    color: var(--rust);
+    font-weight: 400;
+  }
+  .subtitle {
+    margin-top: 14px;
+    font-size: 14px;
+    color: var(--muted);
+    max-width: 580px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+  }
+
+  .progress-wrap {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 32px;
+  }
+  .progress-bar {
+    flex: 1;
+    height: 3px;
+    background: var(--line);
+    position: relative;
+    overflow: hidden;
+  }
+  .progress-fill {
+    position: absolute;
+    inset: 0;
+    background: var(--ink);
+    width: 0%;
+    transition: width 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+  }
+  .progress-label {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .section {
+    display: none;
+    animation: fadeIn 0.5s ease-out;
+  }
+  .section.active { display: block; }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .section-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: clamp(28px, 4.8vw, 38px);
+    color: var(--deep);
+    line-height: 1.1;
+    margin-bottom: 10px;
+  }
+  .section-lede {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 28px;
+    padding-bottom: 22px;
+    border-bottom: 1px dashed var(--line);
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  .primer {
+    background: var(--ivory);
+    border: 1px solid var(--line);
+    padding: 22px 24px;
+    margin-bottom: 32px;
+    position: relative;
+  }
+  .primer::before {
+    content: "Reference";
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    background: var(--cream);
+    padding: 0 10px;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+  }
+  .primer h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: 22px;
+    color: var(--deep);
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+  .primer p {
+    font-size: 13.5px;
+    color: var(--ink);
+    line-height: 1.6;
+    margin-bottom: 8px;
+  }
+  .primer p:last-child { margin-bottom: 0; }
+  .primer p strong {
+    color: var(--deep);
+    font-weight: 600;
+  }
+
+  .q { margin-bottom: 28px; }
+  .q-label {
+    display: block;
+    font-size: 14.5px;
+    font-weight: 500;
+    color: var(--deep);
+    margin-bottom: 12px;
+    line-height: 1.4;
+  }
+  .q-label .req {
+    color: var(--rust);
+    margin-left: 4px;
+  }
+
+  .knowledge {
+    margin: -2px 0 14px;
+    padding: 11px 14px 11px 16px;
+    background: var(--gold-pale);
+    border-left: 2px solid var(--gold);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14.5px;
+    line-height: 1.5;
+    color: var(--deep);
+    font-style: italic;
+  }
+  .knowledge .ktag {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    margin-right: 8px;
+    vertical-align: 2px;
+  }
+  .knowledge strong {
+    font-style: normal;
+    font-weight: 600;
+    color: var(--deep);
+  }
+
+  .options { display: grid; gap: 8px; }
+  .opt {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 13px 16px;
+    background: var(--ivory);
+    border: 1px solid var(--line);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 14px;
+  }
+  .opt:hover {
+    border-color: var(--gold);
+    background: #fff;
+  }
+  .opt input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .opt .dot {
+    width: 16px;
+    height: 16px;
+    border: 1.5px solid var(--muted);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 2px;
+    position: relative;
+    transition: all 0.2s;
+  }
+  .opt input[type="checkbox"] + .dot { border-radius: 2px; }
+  .opt input:checked + .dot {
+    border-color: var(--ink);
+    background: var(--ink);
+  }
+  .opt input:checked + .dot::after {
+    content: "";
+    position: absolute;
+    inset: 3px;
+    background: var(--cream);
+    border-radius: 50%;
+  }
+  .opt input[type="checkbox"]:checked + .dot::after {
+    border-radius: 0;
+    inset: 2px;
+    background: var(--cream);
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  }
+  .opt-text { color: var(--ink); line-height: 1.4; }
+  .opt-text small {
+    display: block;
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 2px;
+    font-weight: 400;
+  }
+
+  select, input[type="text"], textarea {
+    width: 100%;
+    padding: 13px 16px;
+    background: var(--ivory);
+    border: 1px solid var(--line);
+    font-family: inherit;
+    font-size: 14px;
+    color: var(--ink);
+    appearance: none;
+    -webkit-appearance: none;
+  }
+  select {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path d='M1 1l4 4 4-4' stroke='%231a2332' fill='none' stroke-width='1.5'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 38px;
+  }
+  select:focus, input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--ink);
+  }
+  textarea { resize: vertical; min-height: 70px; }
+
+  .nav {
+    display: flex;
+    gap: 12px;
+    justify-content: space-between;
+    margin-top: 36px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+  }
+  .btn {
+    padding: 14px 28px;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s;
+    font-family: 'Inter', sans-serif;
+  }
+  .btn-primary { background: var(--ink); color: var(--cream); }
+  .btn-primary:hover { background: var(--deep); transform: translateY(-1px); }
+  .btn-ghost {
+    background: transparent;
+    color: var(--muted);
+    border: 1px solid var(--line);
+  }
+  .btn-ghost:hover { color: var(--ink); border-color: var(--ink); }
+  .btn:disabled { opacity: 0.35; cursor: not-allowed; transform: none; }
+
+  /* Summary view */
+  .brief-hero {
+    text-align: center;
+    padding: 32px 0 36px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid var(--line);
+  }
+  .brief-eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.34em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+    font-weight: 600;
+  }
+  .verdict-line {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 5.2vw, 44px);
+    line-height: 1.1;
+    color: var(--deep);
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+  .verdict-line em { font-style: italic; }
+  .verdict-line.strong em { color: var(--moss); }
+  .verdict-line.caveat em { color: var(--gold); }
+  .verdict-line.hold em { color: var(--rust); }
+  .verdict-blurb {
+    font-size: 14px;
+    color: var(--muted);
+    max-width: 560px;
+    margin: 0 auto;
+    line-height: 1.6;
+    font-style: italic;
+  }
+
+  .brief-block { margin-bottom: 36px; }
+  .brief-block .blbl {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--gold);
+    margin-bottom: 4px;
+  }
+  .brief-block h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: 26px;
+    color: var(--deep);
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 16px;
+    line-height: 1.2;
+  }
+
+  .reco {
+    background: var(--ivory);
+    border-left: 2px solid var(--gold);
+    padding: 14px 16px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .reco strong { color: var(--deep); font-weight: 600; }
+  .reco.win { border-left-color: var(--moss); }
+  .reco.note { border-left-color: var(--rust); }
+
+  .snap-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    margin-bottom: 26px;
+  }
+  .snap-cell {
+    background: var(--ivory);
+    padding: 14px 16px;
+  }
+  .snap-cell .k {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 5px;
+    font-weight: 600;
+  }
+  .snap-cell .v {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    color: var(--deep);
+    font-weight: 500;
+    line-height: 1.2;
+  }
+
+  /* Regime comparison */
+  .regime-rec {
+    background: var(--deep);
+    color: var(--ivory);
+    padding: 22px 24px;
+    margin-bottom: 18px;
+    border-left: 3px solid var(--gold);
+  }
+  .regime-rec .label {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold-soft);
+    margin-bottom: 6px;
+    font-weight: 600;
+  }
+  .regime-rec .title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #fff;
+    line-height: 1.2;
+  }
+  .regime-rec .why {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    color: rgba(245, 241, 232, 0.85);
+    line-height: 1.55;
+  }
+
+  .regime-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    margin-bottom: 14px;
+  }
+  .regime-col {
+    background: var(--ivory);
+    padding: 18px;
+  }
+  .regime-col.recommended {
+    background: #fff;
+    box-shadow: inset 0 0 0 2px var(--moss);
+    position: relative;
+  }
+  .regime-col.recommended::after {
+    content: "Suggested";
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    background: var(--moss);
+    color: var(--ivory);
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    font-weight: 600;
+  }
+  .regime-col h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--deep);
+    margin-bottom: 4px;
+  }
+  .regime-col .basic {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--line);
+  }
+  .regime-col ul {
+    list-style: none;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .regime-col li {
+    padding: 6px 0;
+    padding-left: 22px;
+    position: relative;
+    color: var(--ink);
+  }
+  .regime-col li.yes::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--moss);
+    font-weight: 600;
+  }
+  .regime-col li.no {
+    color: var(--muted);
+  }
+  .regime-col li.no::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--muted);
+    font-weight: 400;
+  }
+  .regime-col li strong { color: var(--deep); font-weight: 600; }
+
+  /* Property visualisation */
+  .property-vis {
+    background: var(--soft-bg);
+    border: 1px solid var(--line);
+    padding: 20px;
+    margin-bottom: 16px;
+  }
+  .property-vis .pv-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--deep);
+    margin-bottom: 4px;
+  }
+  .property-vis .pv-sub {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 16px;
+    line-height: 1.55;
+  }
+  .houses {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--line);
+    margin-bottom: 14px;
+  }
+  .house-col {
+    background: #fff;
+    padding: 16px 12px;
+    text-align: center;
+  }
+  .house-col .hc-title {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  .house-row {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    font-size: 28px;
+    margin-bottom: 8px;
+  }
+  .house-col .hc-foot {
+    font-size: 11px;
+    color: var(--moss);
+    font-weight: 500;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 13px;
+  }
+  .pv-total {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    color: var(--deep);
+    font-style: italic;
+    padding-top: 10px;
+    border-top: 1px dashed var(--line);
+    line-height: 1.5;
+  }
+  .pv-total strong { font-style: normal; color: var(--deep); font-weight: 600; }
+
+  .disclaimer {
+    margin-top: 36px;
+    padding: 16px;
+    background: var(--soft-bg);
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 1.6;
+    font-style: italic;
+  }
+  .disclaimer strong { color: var(--ink); font-style: normal; }
+
+  footer {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 580px) {
+    .wrap { padding: 22px 16px 60px; }
+    .nav { flex-direction: column-reverse; }
+    .btn { width: 100%; }
+    .regime-grid { grid-template-columns: 1fr; }
+    .houses { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="head">
+    <div class="eyebrow">Hindu Undivided Family &middot; Personal Suitability Guide</div>
+    <h1>Is an <em>HUF</em><br/>the right fit for you?</h1>
+    <p class="subtitle">A structured assessment of how the Hindu Undivided Family structure may align with your personal, financial, and succession objectives &mdash; with a clear view of the applicable tax regime and the multi-property holding benefit.</p>
+  </header>
+
+  <div class="progress-wrap">
+    <div class="progress-bar"><div class="progress-fill" id="progress"></div></div>
+    <div class="progress-label" id="progressLabel">Section 1 / 6</div>
+  </div>
+
+  <form id="form">
+
+    <!-- ============ I. FAMILY ============ -->
+    <section class="section active" data-step="1">
+      <div class="section-num">I.</div>
+      <div class="section-title">Family and personal context</div>
+      <div class="section-lede">An HUF reflects a family unit. The composition of your immediate family shapes how the structure works for you.</div>
+
+      <div class="primer">
+        <h3>What an HUF is, in brief</h3>
+        <p>A <strong>Hindu Undivided Family</strong> is recognised as a separate taxable entity under the Income Tax Act, 1961. It has its own Permanent Account Number, its own bank accounts, and its own tax filings &mdash; entirely distinct from your personal records.</p>
+        <p>Forming an HUF requires a valid family unit known as a <strong>coparcenary</strong>. In practical terms, this means at least two related family members. Following the Hindu Succession (Amendment) Act, 2005, daughters and sons are equal coparceners.</p>
+        <p>Eligibility to form an HUF is governed by Indian personal law. Your advisor will confirm applicability based on your specific circumstances.</p>
+      </div>
+
+      <div class="q">
+        <label class="q-label">What is your current marital status?<span class="req">*</span></label>
+        <div class="options">
+          <label class="opt"><input type="radio" name="marital" value="married"><span class="dot"></span><span class="opt-text">Married</span></label>
+          <label class="opt"><input type="radio" name="marital" value="single"><span class="dot"></span><span class="opt-text">Single / unmarried</span></label>
+          <label class="opt"><input type="radio" name="marital" value="divorced"><span class="dot"></span><span class="opt-text">Divorced or widowed</span></label>
+        </div>
+      </div>
+
+      <div class="q">
+        <label class="q-label">Do you have children, or do you anticipate having them in the foreseeable future?<span class="req">*</span></label>
+        <div class="knowledge"><span class="ktag">Reference</span>Children are coparceners by birth. Their presence (current or future) strengthens the long-term continuity of the HUF.</div>
+        <div class="options">
+          <label class="opt"><input type="radio" name="children" value="yes"><span class="dot"></span><span class="opt-text">Yes, I have children</span></label>
+          <label class="opt"><input type="radio" name="children" value="planned"><span class="dot"></span><span class="opt-text">Planning to, within a few years</span></label>
+          <label class="opt"><input type="radio" name="children" value="no"><span class="dot"></span><span class="opt-text">No, not currently in my plans</span></label>
+        </div>
+      </div>
+
+      <div class="q">
+        <label class="q-label">Are there other family members &mdash; siblings, parents &mdash; who may be part of the HUF?</label>
+        <div class="knowledge"><span class="ktag">Reference</span>An extended family unit often already has an existing ancestral HUF that you may belong to. Where this is the case, joining or continuing that HUF is a common approach.</div>
+        <div class="options">
+          <label class="opt"><input type="radio" name="coparceners" value="many"><span class="dot"></span><span class="opt-text">Yes, an extended family unit</span></label>
+          <label class="opt"><input type="radio" name="coparceners" value="few"><span class="dot"></span><span class="opt-text">Spouse and/or children only</span></label>
+          <label class="opt"><input type="radio" name="coparceners" value="none"><span class="dot"></span><span class="opt-text">No other family members available</span></label>
+        </div>
+      </div>
+
+      <div class="q">
+        <label class="q-label">Are ancestral property or inherited assets part of your family's wealth?</label>
+        <div class="knowledge"><span class="ktag">Reference</span>Ancestral wealth represents the most established and tax-efficient basis for an HUF. Income from such assets is naturally attributable to the HUF.</div>
+        <div class="options">
+          <label class="opt"><input type="radio" name="ancestral" value="yes"><span class="dot"></span><span class="opt-text">Yes &mdash; significant ancestral wealth</span></label>
+          <label class="opt"><input type="radio" name="ancestral" value="some"><span class="dot"></span><span class="opt-text">Some &mdash; jewellery, a property, modest amounts</span></label>
+          <label class="opt"><input type="radio" name="ancestral" value="no"><span class="dot"></span><span class="opt-text">No clear ancestral linkage</span></label>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ II. INCOME ============ -->
+    <section class="section" data-step="2">
+      <div class="section-num">II.</div>
+      <div class="section-title">Income profile and tax regime</div>
+      <div class="section-lede">Understanding your current tax position helps determine whether the HUF structure offers meaningful benefit and which regime would be most appropriate.</div>
+
+      <div class="primer">
+        <h3>How HUF taxation works</h3>
+        <p>The HUF is a separate taxpayer with its own basic exemption &mdash; <strong>&#8377;4 lakh under the new regime</strong> and <strong>&#8377;2.5 lakh under the old regime</strong> for FY 2025&ndash;26 &mdash; and its own slab structure. Investment income that legitimately belongs to the HUF is taxed within these slabs.</p>
+        <p>An important distinction: the <strong>Section 87A rebate</strong>, which allows individuals to pay zero tax on income up to &#8377;12 lakh under the new regime, does not extend to HUFs. The HUF's benefit comes from slab arbitrage and applicable deductions, rather than the rebate.</p>
+        <p>The HUF can choose its tax regime independently of your personal choice. The optimal regime depends on the HUF's expected income mix and the deductions it will utilise.</p>
+      </div>
+
+      <div class="q">
+        <label class="q-label">What is your approximate annual taxable income?<span class="req">*</span></label>
+        <select name="income">
+          <option value="">&mdash; Select range &mdash;</option>
+          <option value="low">Below &#8377;7 lakh</option>
+          <option value="mid">&#8377;7 lakh &ndash; &#8377;15 lakh</option>
+          <option value="high">&#8377;15 lakh &ndash; &#8377;50 lakh</option>
+          <option value="vhigh">&#8377;50 lakh &ndash; &#8377;2 crore</option>
+          <option value="uhnw">Above &#8377;2 crore</option>
+        </select>
+      </div>
+
+      <div class="q">
+        <label class="q-label">What are your primary income sources? <em>(select all that apply)</em><span class="req">*</span></label>
+        <div class="knowledge"><span class="ktag">Reference</span>Salary income is personal and remains taxed in your hands. Rental income, capital gains, business income, and interest from HUF-held assets can be taxed within the HUF.</div>
+        <div class="options">
+          <label class="opt"><input type="checkbox" name="src_salary"><span class="dot"></span><span class="opt-text">Salary / employment income</span></label>
+          <label class="opt"><input type="checkbox" name="src_business"><span class="dot"></span><span class="opt-text">Business or professional income</span></label>
+          <label class="opt"><input type="checkbox" name="src_capgain"><span class="dot"></span><span class="opt-text">Capital gains (equities, mutual funds)</span></label>
+          <label class="opt"><input type="checkbox" name="src_rental"><span class="dot"></span><span class="opt-text">Rental income from property</span></label>
+          <label class="opt"><input type="checkbox" name="src_interest"><span class="dot"></span><span class="opt-text">Interest or dividend income</span></label>
+          <label class="opt"><input type="checkbox" name="src_ancestral"><span class="dot"></span><span class="opt-text">Income from ancestral or inherited assets</span></label>
+        </div>
+      </div>
+
+      <div class="q">
+        <label class="q-label">Which tax regime are you currently on, or considering for the HUF?<span class="req">*</span></label>
+        <div class="knowledge"><span class="ktag">Reference</span>The HUF may independently choose between regimes. A personalised recommendation will be provided in the summary, based on your profile.</div>
+        <div class="options">
+          <label class="opt"><input type="radio" name="regime" value="new"><span class="dot"></span><span class="opt-text">New regime<small>Higher basic exemption (&#8377;4L), lower slab rates, limited deductions</small></span></label>
+          <label class="opt"><input type="radio" name="regime" value="old"><span class="dot"></span><span class="opt-text">Old regime<small>Basic exemption &#8377;2.5L, with access to 80C, 80D, 24(b) and other deductions</small></span></label>
+          <label class="opt"><input type="radio" name="regime" value="unsure"><span class="dot"></span><span class="opt-text">Not sure &mdash; would like guidance</span></label>
+        </div>
+      </div>
+
+      <div class="q">
+        <label class="q-label">How much do you typically claim under tax-saving deductions (80C, 80D, home loan interest)?</label>
+        <div class="options">
+          <label class="opt"><input type="radio" name="deduct_level" value="heavy"><span class="dot"></span><span class="opt-text">Significant claims (&#8377;3 lakh or more)<small>Home loan + 80C + 80D fully utilised</small></span></label>
+          <label class="opt"><input type="radio" name="deduct_level" value="moderate"><span class="dot"></span><span class="opt-text">Moderate (&#8377;1.5 lakh &ndash; &#8377;3 lakh)</span></label>
+          <label class="opt"><input type="radio" name="deduct_level" value="light"><span class="dot"></span><span class="opt-text">Light (below &#8377;1.5 lakh)</span></label>
+          <label class="opt"><input type="radio" name="deduct_level" value="none"><span class="dot"></span><span class="opt-text">None or minimal</span></label>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ III. OBJECTIVES ============ -->
+    <section class="section" data-step="3">
+      <div class="section-num">III.</div>
+      <div class="section-title">Your wealth objectives</div>
+      <div class="section-lede">An HUF can serve several purposes. Clarifying which matter most helps shape the right structure for you.</div>
+
+      <div class="q">
+        <label class="q-label">What is your primary motivation for considering an HUF?<span class="req">*</span></label>
+        <div class="options">
+          <label class="opt"><input type="radio" name="goal" value="tax"><span class="dot"></span><span class="opt-text">Reduce overall household tax burden<small>Use the HUF's separate basic exemption and slab structure</small></span></label>
+          <label class="opt"><input type="radio" name="goal" value="succession"><span class="dot"></span><span class="opt-text">Plan succession and inheritance<small>Pass assets across generations in a structured manner</small></span></label>
+          <label class="opt"><input type="radio" name="goal" value="ancestral"><span class="dot"></span><span class="opt-text">Manage ancestral property and inherited assets<small>Pool family wealth under a single entity</small></span></label>
+          <label class="opt"><input type="radio" name="goal" value="business"><span class="dot"></span><span class="opt-text">Structure a family business<small>Run the business through the HUF as a separate entity</small></span></label>
+          <label class="opt"><input type="radio" name="goal" value="property"><span class="dot"></span><span class="opt-text">Hold additional residential properties efficiently<small>Use the HUF's separate property allowance</small></span></label>
+          <label class="opt"><input type="radio" name="goal" value="mixed"><span class="dot"></span><span class="opt-text">A combination of the above</span></label>
+        </div>
+      </div>
+
+      <div class="q">
+        <label class="q-label">How important is privacy of family wealth to you?</label>
+        <div class="options">
+          <label class="opt"><input type="radio" name="privacy" value="high"><span class="dot"></span><span class="opt-text">Very important</span></label>
+          <label class="opt"><input type="radio" name="privacy" value="med"><span class="dot"></span><span class="opt-text">Moderately important</span></label>
+          <label class="opt"><input type="radio" name="privacy" value="low"><span class="dot"></span><span class="opt-text">Not a primary concern</span></label>
+        </div>
+      </div>
+
+      <div class="q">
+        <label class="q-label">Your intended investment horizon for assets held in the HUF</label>
+        <div class="options">
+          <label class="opt"><input type="radio" name="horizon" value="long"><span class="dot"></span><span class="opt-text">Long-term (10+ years, generational)</span></label>
+          <label class="opt"><input type="radio" name="horizon" value="med"><span class="dot"></span><span class="opt-text">Medium (3&ndash;10 years)</span></label>
+          <label class="opt"><input type="radio" name="horizon" value="short"><span class="dot"></span><span class="opt-text">Short (under 3 years)</span></label>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ IV. ASSETS & PROPERTY ============ -->
+    <section class="section" data-step="4">
+      <div class="section-num">IV.</div>
+      <div class="section-title">Assets, capital, and property</div>
+      <div class="section-lede">An HUF requires an initial corpus, and the source of that corpus determines its tax treatment. For families with multiple properties, the HUF also offers a specific advantage.</div>
+
+      <div class="primer">
+        <h3>The multiple-property benefit</h3>
+        <p>Under Section 23(2) of the Income Tax Act, an individual may hold up to <strong>two residential properties as self-occupied</strong>, with the annual value treated as nil. From the third property onward, the property is treated as "deemed let out" and notional rent becomes taxable, even if the property is vacant.</p>
+        <p>Because the HUF is a <em>separate person</em> in the eyes of the Act, it independently qualifies for the same allowance. A family may therefore hold up to <strong>four residential properties at nil annual value</strong> &mdash; two in the individual's name and two in the HUF's. This treatment is available only to individuals and HUFs.</p>
+      </div>
+
+      <div class="q">
+        <label class="q-label">How do you plan to fund the initial HUF corpus?<span class="req">*</span></label>
+        <div class="knowledge"><span class="ktag">Reference</span>Gifts from non-member relatives (parents, in-laws, siblings) and ancestral assets are exempt from clubbing under Section 64(2). Personal funds transferred to your own HUF attract clubbing provisions and reduce the structure's tax efficiency.</div>
+        <div class="options">
+          <label class="opt"><input type="radio" name="corpus" value="gift_rel"><span class="dot"></span><span class="opt-text">Gifts from non-member relatives<small>Tax-efficient, no clubbing concern</small></span></label>
+          <label class="opt"><input type="radio" name="corpus" value="ancestral"><span class="dot"></span><span class="opt-text">Ancestral or inherited assets</span></label>
+          <label class="opt"><input type="radio" name="corpus" value="self"><span class="dot"></span><span class="opt-text">My own savings transferred in<small>Subject to Section 64(2) clubbing</small></span></label>
+          <label class="opt"><input type="radio" name="corpus" value="business"><span class="dot"></span><span class="opt-text">An existing family business or firm</span></label>
+          <label class="opt"><input type="radio" name="corpus" value="unsure"><span class="dot"></span><span class="opt-text">Yet to be determined</span></label>
+        </div>
+      </div>
+
+      <div class="q">
+        <label class="q-label">Approximate value of assets you would transfer to the HUF</label>
+        <select name="corpus_size">
+          <option value="">&mdash; Select &mdash;</option>
+          <option value="small">Under &#8377;10 lakh</option>
+          <option value="mid">&#8377;10 lakh &ndash; &#8377;50 lakh</option>
+          <option value="large">&#8377;50 lakh &ndash; &#8377;2 crore</option>
+          <option value="xlarge">Above &#8377;2 crore</option>
+        </select>
+      </div>
+
+      <div class="q">
+        <label class="q-label">How many residential properties do you personally own today?<span class="req">*</span></label>
+        <div class="knowledge"><span class="ktag">Reference</span>Individuals may hold up to two self-occupied properties at nil annual value. Properties beyond this are treated as deemed let out, and notional rent becomes taxable.</div>
+        <div class="options">
+          <label class="opt"><input type="radio" name="props" value="0"><span class="dot"></span><span class="opt-text">None</span></label>
+          <label class="opt"><input type="radio" name="props" value="1"><span class="dot"></span><span class="opt-text">One</span></label>
+          <label class="opt"><input type="radio" name="props" value="2"><span class="dot"></span><span class="opt-text">Two</span></label>
+          <label class="opt"><input type="radio" name="props" value="3"><span class="dot"></span><span class="opt-text">Three</span></label>
+          <label class="opt"><input type="radio" name="props" value="4plus"><span class="dot"></span><span class="opt-text">Four or more</span></label>
+        </div>
+      </div>
+
+      <div class="q">
+        <label class="q-label">Do you intend to acquire or hold residential property through the HUF?</label>
+        <div class="options">
+          <label class="opt"><input type="radio" name="huf_prop" value="ancestral"><span class="dot"></span><span class="opt-text">Yes &mdash; transfer ancestral / family property to the HUF</span></label>
+          <label class="opt"><input type="radio" name="huf_prop" value="buy"><span class="dot"></span><span class="opt-text">Yes &mdash; the HUF will acquire new property in its own name</span></label>
+          <label class="opt"><input type="radio" name="huf_prop" value="future"><span class="dot"></span><span class="opt-text">Possibly in the future</span></label>
+          <label class="opt"><input type="radio" name="huf_prop" value="no"><span class="dot"></span><span class="opt-text">No, financial assets only</span></label>
+        </div>
+      </div>
+
+      <div class="q">
+        <label class="q-label">Where do you intend the HUF to invest? <em>(select all that apply)</em></label>
+        <div class="options">
+          <label class="opt"><input type="checkbox" name="inv_equity"><span class="dot"></span><span class="opt-text">Listed equities and mutual funds</span></label>
+          <label class="opt"><input type="checkbox" name="inv_realestate"><span class="dot"></span><span class="opt-text">Real estate</span></label>
+          <label class="opt"><input type="checkbox" name="inv_debt"><span class="dot"></span><span class="opt-text">Debt instruments / fixed deposits / bonds</span></label>
+          <label class="opt"><input type="checkbox" name="inv_business"><span class="dot"></span><span class="opt-text">Business interests / partnerships</span></label>
+          <label class="opt"><input type="checkbox" name="inv_gold"><span class="dot"></span><span class="opt-text">Gold / sovereign gold bonds</span></label>
+          <label class="opt"><input type="checkbox" name="inv_insurance"><span class="dot"></span><span class="opt-text">Life insurance, ULIPs</span></label>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ V. CONSIDERATIONS ============ -->
+    <section class="section" data-step="5">
+      <div class="section-num">V.</div>
+      <div class="section-title">Important considerations</div>
+      <div class="section-lede">An HUF involves shared family rights and a long-term commitment. These questions help ensure the structure aligns with your expectations.</div>
+
+      <div class="q">
+        <label class="q-label">Are you aware that all coparceners &mdash; including future members &mdash; acquire rights in HUF property?<span class="req">*</span></label>
+        <div class="knowledge"><span class="ktag">Reference</span>Each coparcener has an undivided right in the HUF's assets. This is an inherent feature of the structure and merits clear consideration.</div>
+        <div class="options">
+          <label class="opt"><input type="radio" name="aware_rights" value="yes_ok"><span class="dot"></span><span class="opt-text">Yes &mdash; comfortable with the arrangement</span></label>
+          <label class="opt"><input type="radio" name="aware_rights" value="yes_concern"><span class="dot"></span><span class="opt-text">Yes &mdash; would like further clarification</span></label>
+          <label class="opt"><input type="radio" name="aware_rights" value="no"><span class="dot"></span><span class="opt-text">This is new to me</span></label>
+        </div>
+      </div>
+
+      <div class="q">
+        <label class="q-label">Are you aware of clubbing provisions under Section 64(2) on personal asset transfers to an HUF?</label>
+        <div class="knowledge"><span class="ktag">Reference</span>Where personal assets are transferred to your own HUF without consideration, the income on such assets is clubbed back in your hands. Funding through gifts from relatives or ancestral sources avoids this.</div>
+        <div class="options">
+          <label class="opt"><input type="radio" name="aware_clubbing" value="yes"><span class="dot"></span><span class="opt-text">Yes, fully aware</span></label>
+          <label class="opt"><input type="radio" name="aware_clubbing" value="vague"><span class="dot"></span><span class="opt-text">Heard of it, would like more clarity</span></label>
+          <label class="opt"><input type="radio" name="aware_clubbing" value="no"><span class="dot"></span><span class="opt-text">No</span></label>
+        </div>
+      </div>
+
+      <div class="q">
+        <label class="q-label">Were you aware that the Section 87A rebate (zero tax up to &#8377;12 lakh under the new regime) applies only to individuals, not to HUFs?</label>
+        <div class="options">
+          <label class="opt"><input type="radio" name="aware_87a" value="yes"><span class="dot"></span><span class="opt-text">Yes, I was aware</span></label>
+          <label class="opt"><input type="radio" name="aware_87a" value="no"><span class="dot"></span><span class="opt-text">No &mdash; this is a useful clarification</span></label>
+        </div>
+      </div>
+
+      <div class="q">
+        <label class="q-label">Are you prepared for the compliance involved &mdash; separate PAN, separate ITR, separate books of account?</label>
+        <div class="options">
+          <label class="opt"><input type="radio" name="compliance" value="yes"><span class="dot"></span><span class="opt-text">Yes, I have a CA or tax advisor</span></label>
+          <label class="opt"><input type="radio" name="compliance" value="maybe"><span class="dot"></span><span class="opt-text">Willing to engage one as required</span></label>
+          <label class="opt"><input type="radio" name="compliance" value="no"><span class="dot"></span><span class="opt-text">Prefer minimal administrative involvement</span></label>
+        </div>
+      </div>
+
+      <div class="q">
+        <label class="q-label">In future, would you be comfortable with the possibility of a partition of HUF assets among members?</label>
+        <div class="options">
+          <label class="opt"><input type="radio" name="partition" value="yes"><span class="dot"></span><span class="opt-text">Yes</span></label>
+          <label class="opt"><input type="radio" name="partition" value="reluctant"><span class="dot"></span><span class="opt-text">With some reservations</span></label>
+          <label class="opt"><input type="radio" name="partition" value="no"><span class="dot"></span><span class="opt-text">This is a concern for me</span></label>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ VI. DETAILS ============ -->
+    <section class="section" data-step="6">
+      <div class="section-num">VI.</div>
+      <div class="section-title">A few final details</div>
+      <div class="section-lede">Optional information for your personalised summary.</div>
+
+      <div class="q">
+        <label class="q-label">Name (optional)</label>
+        <input type="text" name="name" placeholder="Your name">
+      </div>
+
+      <div class="q">
+        <label class="q-label">Age band</label>
+        <select name="age">
+          <option value="">&mdash; Select &mdash;</option>
+          <option value="u30">Under 30</option>
+          <option value="30s">30 &ndash; 40</option>
+          <option value="40s">40 &ndash; 50</option>
+          <option value="50s">50 &ndash; 60</option>
+          <option value="60p">Above 60</option>
+        </select>
+      </div>
+
+      <div class="q">
+        <label class="q-label">City or state of residence</label>
+        <input type="text" name="city" placeholder="e.g. Mumbai, Maharashtra">
+      </div>
+
+      <div class="q">
+        <label class="q-label">Email address (optional &mdash; for the advisor to follow up)</label>
+        <input type="text" name="email" placeholder="you@example.com">
+      </div>
+
+      <div class="q">
+        <label class="q-label">Phone number (optional)</label>
+        <input type="text" name="phone" placeholder="+91 ...">
+      </div>
+
+      <div class="q">
+        <label class="q-label">Anything specific you would like to share with your advisor?</label>
+        <textarea name="notes" placeholder="Optional"></textarea>
+      </div>
+    </section>
+
+    <!-- ============ SUMMARY ============ -->
+    <section class="section" data-step="7" id="resultSection">
+      <div class="brief-hero">
+        <div class="brief-eyebrow">Personal Suitability Summary</div>
+        <div class="verdict-line" id="verdictLine">&mdash;</div>
+        <div class="verdict-blurb" id="verdictBlurb">&mdash;</div>
+        <div id="submitStatus" style="margin-top:18px;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);font-weight:500;"></div>
+      </div>
+
+      <div class="snap-grid" id="snapGrid"></div>
+
+      <div class="brief-block">
+        <div class="blbl">i.</div>
+        <h2>Why this assessment</h2>
+        <div id="rationale"></div>
+      </div>
+
+      <div class="brief-block" id="regimeBlock">
+        <div class="blbl">ii.</div>
+        <h2>Old regime or new &mdash; what the HUF receives under each</h2>
+        <div id="regimeRec"></div>
+        <div class="regime-grid" id="regimeGrid"></div>
+        <div class="reco" style="margin-top: 6px;"><strong>An important clarification.</strong> Unlike individuals, an HUF does not receive the Section 87A rebate. An individual on &#8377;12 lakh of income may pay no tax under the new regime, whereas an HUF on the same income pays approximately &#8377;62,400. The HUF's case rests on slab arbitrage and applicable deductions.</div>
+      </div>
+
+      <div class="brief-block" id="propertyBlock">
+        <div class="blbl">iii.</div>
+        <h2>The multi-property holding benefit</h2>
+        <div id="propertyContent"></div>
+      </div>
+
+      <div class="brief-block">
+        <div class="blbl">iv.</div>
+        <h2>Suggested optimisation areas</h2>
+        <div id="optimisation"></div>
+      </div>
+
+      <div class="brief-block" id="considerationsBlock">
+        <div class="blbl">v.</div>
+        <h2>Points to discuss with your advisor</h2>
+        <div id="considerations"></div>
+      </div>
+
+      <div class="disclaimer">
+        <strong>For your reference.</strong> This guide offers a directional assessment based on the Income Tax Act as applicable for FY 2025&ndash;26 (AY 2026&ndash;27). HUF formation carries legal, tax, and family implications, and applicability is governed by Indian personal law. Please consult a qualified chartered accountant and legal counsel before formalising any structure.
+      </div>
+    </section>
+
+    <div class="nav" id="nav">
+      <button type="button" class="btn btn-ghost" id="prevBtn">&lsaquo; Back</button>
+      <button type="button" class="btn btn-primary" id="nextBtn">Continue &rsaquo;</button>
+    </div>
+  </form>
+
+  <footer>Hindu Undivided Family &middot; Personal Suitability Guide</footer>
+</div>
+
+<script>
+  const form = document.getElementById('form');
+  const sections = document.querySelectorAll('.section');
+  const totalSteps = 6;
+  let current = 1;
+
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const progress = document.getElementById('progress');
+  const progressLabel = document.getElementById('progressLabel');
+
+  function show(step) {
+    sections.forEach(s => s.classList.remove('active'));
+    const target = document.querySelector('.section[data-step="' + step + '"]');
+    target.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    const pct = Math.min(100, ((step - 1) / totalSteps) * 100);
+    progress.style.width = pct + '%';
+    if (step <= totalSteps) {
+      progressLabel.textContent = 'Section ' + step + ' / ' + totalSteps;
+    } else {
+      progressLabel.textContent = 'Summary ready';
+      progress.style.width = '100%';
+    }
+
+    prevBtn.disabled = step === 1;
+    if (step === totalSteps) {
+      nextBtn.textContent = 'View summary ›';
+    } else if (step > totalSteps) {
+      document.getElementById('nav').style.display = 'none';
+    } else {
+      nextBtn.textContent = 'Continue ›';
+    }
+  }
+
+  prevBtn.addEventListener('click', () => {
+    if (current > 1) { current--; show(current); }
+  });
+  nextBtn.addEventListener('click', () => {
+    if (current < totalSteps) { current++; show(current); }
+    else if (current === totalSteps) { current++; compute(); show(current); }
+  });
+
+  function get(name) {
+    const el = form.querySelector('[name="' + name + '"]:checked') || form.querySelector('[name="' + name + '"]');
+    if (!el) return '';
+    if (el.type === 'checkbox') return el.checked;
+    return el.value;
+  }
+  function isChecked(name) {
+    const el = form.querySelector('[name="' + name + '"]');
+    return el && el.checked;
+  }
+
+  function buildRegimeGrid(recommend) {
+    const oldItems = [
+      { type: 'yes', text: '<strong>Basic exemption: &#8377;2.5 lakh</strong>' },
+      { type: 'yes', text: 'Slab rates: 5% (2.5&ndash;5L), 20% (5&ndash;10L), 30% (10L+)' },
+      { type: 'yes', text: '<strong>Section 80C</strong> &mdash; up to &#8377;1.5L (ELSS, LIC for members, tax-saving FDs, ULIP, home loan principal)' },
+      { type: 'yes', text: '<strong>Section 80D</strong> &mdash; &#8377;25K / &#8377;50K (senior) for member health insurance' },
+      { type: 'yes', text: '<strong>Section 24(b)</strong> &mdash; &#8377;2L home loan interest deduction on self-occupied property' },
+      { type: 'yes', text: '<strong>Section 80G</strong> &mdash; charitable donations' },
+      { type: 'yes', text: 'Section 80TTA &mdash; &#8377;10K savings interest' },
+      { type: 'yes', text: 'Capital gains exemptions u/s 54, 54F, 54EC' },
+      { type: 'no',  text: 'Section 87A rebate (not available to HUFs in either regime)' },
+      { type: 'no',  text: 'Standard deduction (applies to salary income; HUFs do not have salary)' }
+    ];
+
+    const newItems = [
+      { type: 'yes', text: '<strong>Basic exemption: &#8377;4 lakh</strong> (higher than old regime)' },
+      { type: 'yes', text: 'Gentler slab ladder: 5%, 10%, 15%, 20%, 25%, 30%' },
+      { type: 'yes', text: 'Lower surcharge ceiling (25% vs 37% in old regime)' },
+      { type: 'yes', text: 'Section 24(b) on <em>let-out</em> property &mdash; interest deductible against rent' },
+      { type: 'yes', text: 'Capital gains exemptions u/s 54, 54F, 54EC' },
+      { type: 'no',  text: 'Section 80C, 80D, 80G, 80TTA &mdash; not available' },
+      { type: 'no',  text: 'Section 24(b) on self-occupied property &mdash; not available' },
+      { type: 'no',  text: 'Section 87A rebate &mdash; available to individuals only' },
+      { type: 'no',  text: 'Standard deduction &mdash; not applicable to HUFs' }
+    ];
+
+    const oldRec = recommend === 'old' ? ' recommended' : '';
+    const newRec = recommend === 'new' ? ' recommended' : '';
+
+    let html = '<div class="regime-col' + oldRec + '">';
+    html += '<h4>Old regime</h4>';
+    html += '<div class="basic">Traditional slabs, broader deductions</div>';
+    html += '<ul>';
+    oldItems.forEach(i => { html += '<li class="' + i.type + '">' + i.text + '</li>'; });
+    html += '</ul></div>';
+
+    html += '<div class="regime-col' + newRec + '">';
+    html += '<h4>New regime <span style="font-size:11px;color:var(--muted);font-weight:400;">(default)</span></h4>';
+    html += '<div class="basic">Higher exemption, limited deductions</div>';
+    html += '<ul>';
+    newItems.forEach(i => { html += '<li class="' + i.type + '">' + i.text + '</li>'; });
+    html += '</ul></div>';
+
+    return html;
+  }
+
+  function buildPropertyBlock(propCount, hufProp) {
+    const numProps = propCount === '4plus' ? 4 : (parseInt(propCount) || 0);
+    let html = '';
+
+    html += '<div class="property-vis">';
+    html += '<div class="pv-title">The four-property allowance, visualised</div>';
+    html += '<div class="pv-sub">Under Sections 23(2) and 23(4) of the Income Tax Act, both an individual and an HUF &mdash; being separate "persons" &mdash; may each hold up to two self-occupied properties at nil annual value.</div>';
+    html += '<div class="houses">';
+    html += '<div class="house-col"><div class="hc-title">You (individual)</div><div class="house-row">&#127968; &#127968;</div><div class="hc-foot">Two properties at nil annual value</div></div>';
+    html += '<div class="house-col"><div class="hc-title">Your HUF</div><div class="house-row">&#127968; &#127968;</div><div class="hc-foot">Two properties at nil annual value</div></div>';
+    html += '</div>';
+    html += '<div class="pv-total">Up to <strong>four properties</strong> in the family held free of notional rent &mdash; without an HUF, the third property onward is treated as deemed let out.</div>';
+    html += '</div>';
+
+    if (numProps >= 3) {
+      html += '<div class="reco win"><strong>A relevant optimisation for your situation.</strong> You currently own ' + (propCount === '4plus' ? 'four or more' : numProps) + ' properties. ' + (propCount === '4plus' ? 'At least two of these are' : 'One of these is') + ' likely being treated as deemed let out, with notional rent attracting tax. By transferring or restructuring up to two properties into the HUF (preferably through ancestral linkage to avoid clubbing), the nil-annual-value treatment may be restored. Annual benefit varies with property values and is typically meaningful.</div>';
+    } else if (numProps === 2) {
+      html += '<div class="reco"><strong>At the individual ceiling.</strong> You have used both self-occupied property slots available to you personally. Any additional property acquisition would attract notional rent unless held through the HUF, which has its own allowance for two further properties.</div>';
+    } else if (numProps === 1) {
+      html += '<div class="reco"><strong>Room to expand efficiently.</strong> You may hold one more property personally at nil annual value. For a third and fourth property, the HUF would be the appropriate vehicle.</div>';
+    } else if (numProps === 0 && (hufProp === 'buy' || hufProp === 'ancestral')) {
+      html += '<div class="reco"><strong>HUF-based acquisition from the outset.</strong> Property acquired in the HUF\'s name (using HUF funds, to avoid clubbing) generates rental income and capital gains taxable within the HUF. A suitable approach for long-term family wealth.</div>';
+    } else {
+      html += '<div class="reco">This benefit may not directly apply to your current property holdings, but remains a relevant consideration for any future acquisitions.</div>';
+    }
+
+    if (hufProp === 'ancestral') {
+      html += '<div class="reco win"><strong>Ancestral property transfer.</strong> A well-established route &mdash; ancestral assets naturally fall within the HUF and Section 64(2) clubbing does not apply.</div>';
+    } else if (hufProp === 'buy') {
+      html += '<div class="reco"><strong>HUF acquiring new property.</strong> The down payment, loan EMIs, and registration should be in the HUF\'s name. Funding source: the HUF\'s own corpus or a loan against ancestral assets, rather than the karta\'s personal funds.</div>';
+    }
+
+    return html;
+  }
+
+  function recommendRegime(income, deductLevel, hufProp) {
+    let recommend = 'new';
+    let why = '';
+
+    const willClaim24b = (hufProp === 'ancestral' || hufProp === 'buy');
+    const heavyDeduct = deductLevel === 'heavy' || (deductLevel === 'moderate' && willClaim24b);
+
+    if (heavyDeduct && (income === 'high' || income === 'vhigh' || income === 'uhnw')) {
+      recommend = 'old';
+      why = 'The HUF is likely to claim &#8377;3 lakh or more in combined deductions (80C, 80D, and home loan interest). At your income level, the deductions available under the old regime outweigh the lower slab rates of the new regime.';
+    } else if (willClaim24b && deductLevel !== 'none' && deductLevel !== 'light') {
+      recommend = 'old';
+      why = 'Because the HUF will hold a self-occupied property with a home loan, the &#8377;2 lakh Section 24(b) interest deduction is available only under the old regime. Combined with 80C, this typically favours the old regime.';
+    } else if (income === 'low' || income === 'mid') {
+      recommend = 'new';
+      why = 'At the HUF\'s expected income level, the higher &#8377;4 lakh basic exemption and gentler slab structure of the new regime are generally more favourable than the deductions of the old regime &mdash; particularly as the HUF does not receive the Section 87A rebate.';
+    } else {
+      recommend = 'new';
+      why = 'With limited deductions in play, the new regime\'s lower slab rates and higher basic exemption are likely the better outcome. Compliance is also simpler.';
+    }
+
+    return { recommend, why };
+  }
+
+  function compute() {
+    const rationale = [];
+    const optim = [];
+    const considers = [];
+
+    const marital = get('marital');
+    const children = get('children');
+    const coparceners = get('coparceners');
+    const ancestral = get('ancestral');
+
+    let verdict = 'strong';
+    let verdictLine = '<em>Well-suited</em> for HUF formation.';
+    let verdictBlurb = 'Your profile aligns well with the requirements and benefits of an HUF structure. The suggested optimisations are outlined below.';
+
+    // Family-based eligibility check
+    if (marital === 'single' && coparceners === 'none') {
+      verdict = 'hold';
+      verdictLine = '<em>Not currently suitable</em> for independent HUF formation.';
+      verdictBlurb = 'An HUF requires at least one additional family member as a coparcener. The discussion may be revisited at a future life stage. In the meantime, alternative structures such as a Private Family Trust may be worth exploring.';
+    } else {
+      // Score-based reasoning
+      let score = 0;
+
+      if (marital === 'married' && children === 'yes') {
+        score += 20;
+        rationale.push('<div class="reco win"><strong>A well-aligned family composition.</strong> Married with children means the coparcener structure required for an HUF is naturally in place.</div>');
+      } else if (marital === 'married' && children === 'planned') {
+        score += 14;
+        rationale.push('<div class="reco"><strong>A workable composition.</strong> Married, with children expected &mdash; the HUF can be formed now and may strengthen as the family grows.</div>');
+      } else if (marital === 'single' && coparceners === 'many') {
+        score += 12;
+        rationale.push('<div class="reco"><strong>Extended family context.</strong> You may be able to join or continue an existing ancestral HUF as a coparcener.</div>');
+      } else if (marital === 'divorced') {
+        score += children === 'yes' ? 14 : 6;
+        rationale.push('<div class="reco">An HUF can continue or be formed where at least one coparcener (typically a child) is present.</div>');
+      }
+
+      const income = get('income');
+      if (income === 'uhnw' || income === 'vhigh') {
+        score += 20;
+        rationale.push('<div class="reco win"><strong>High tax bracket.</strong> Routing investment income through the HUF provides access to a separate basic exemption (&#8377;4L under the new regime, &#8377;2.5L under the old) and a fresh slab ladder &mdash; meaningful at your income level.</div>');
+      } else if (income === 'high') {
+        score += 14;
+        rationale.push('<div class="reco"><strong>Tangible tax benefit.</strong> In the &#8377;15&ndash;50 lakh bracket, splitting investment income through the HUF typically yields &#8377;50,000&ndash;&#8377;1,50,000 in annual savings.</div>');
+      } else if (income === 'mid') {
+        score += 7;
+        considers.push('<div class="reco">Savings will be moderate at your income level. Worth weighing against the annual compliance cost.</div>');
+      } else if (income === 'low') {
+        score += 2;
+        considers.push('<div class="reco note"><strong>Moderate benefit at this income level.</strong> The compliance cost of an HUF (typically &#8377;5,000&ndash;&#8377;15,000 annually) may exceed the tax savings.</div>');
+      }
+
+      if (isChecked('src_ancestral') || ancestral === 'yes') {
+        score += 8;
+        rationale.push('<div class="reco win"><strong>Ancestral wealth in play.</strong> The most established and tax-efficient basis for an HUF. Income from ancestral assets is naturally attributable to the HUF without clubbing concerns.</div>');
+      }
+
+      const goal = get('goal');
+      if (goal === 'tax') {
+        score += 6;
+        optim.push('<div class="reco"><strong>Tax-focused approach.</strong> Open an HUF demat and bank account, use gifts from non-member relatives as the initial corpus, and route investment income through the HUF.</div>');
+      } else if (goal === 'succession') {
+        score += 10;
+        optim.push('<div class="reco"><strong>Succession planning.</strong> Combine the HUF with a registered Will specifying karta succession and member shares to support orderly transmission of wealth.</div>');
+      } else if (goal === 'ancestral') {
+        score += 12;
+        optim.push('<div class="reco win"><strong>Ancestral wealth stewardship.</strong> A natural fit for the HUF structure. Formalise with a deed and PAN as the starting point.</div>');
+      } else if (goal === 'business') {
+        score += 8;
+        optim.push('<div class="reco"><strong>Family business structuring.</strong> Positioning the HUF as a partner in the family LLP or firm allows interest and remuneration to the karta to be deductible at the HUF level.</div>');
+      } else if (goal === 'property') {
+        score += 12;
+        optim.push('<div class="reco win"><strong>Property-focused structure.</strong> An especially strong fit. The HUF can hold up to two self-occupied properties at nil annual value, in addition to your personal two &mdash; effectively shielding four family homes from notional rent.</div>');
+      } else if (goal === 'mixed') {
+        score += 9;
+        optim.push('<div class="reco"><strong>Multi-objective structure.</strong> Combine the HUF with a Family Trust for succession beyond the coparcenary line.</div>');
+      }
+
+      const corpus = get('corpus');
+      if (corpus === 'gift_rel') {
+        score += 8;
+        optim.push('<div class="reco win"><strong>Funding via relative gifts.</strong> Gifts from parents, in-laws, and siblings to the HUF are exempt under Section 56(2) and avoid clubbing.</div>');
+      } else if (corpus === 'ancestral') {
+        score += 10;
+        optim.push('<div class="reco win"><strong>Ancestral corpus.</strong> The most established starting point for an HUF, with no tax incidence at formation.</div>');
+      } else if (corpus === 'self') {
+        considers.push('<div class="reco note"><strong>Funding consideration.</strong> Personal funds transferred to your own HUF attract Section 64(2) clubbing &mdash; income on such assets is taxed in your hands. Consider funding through gifts from relatives instead.</div>');
+      } else if (corpus === 'business') {
+        score += 5;
+        optim.push('<div class="reco">Conversion of an existing business to HUF &mdash; to be executed with appropriate transfer deeds and stamp duty planning.</div>');
+      }
+
+      const props = get('props');
+      const hufProp = get('huf_prop');
+      if (props === '3' || props === '4plus') {
+        score += 12;
+        rationale.push('<div class="reco win"><strong>Multi-property ownership.</strong> You own ' + (props === '4plus' ? 'four or more' : 'three') + ' properties &mdash; the HUF unlocks an additional allowance under Section 23(2). See the multi-property section below for details.</div>');
+      } else if (props === '2' && hufProp !== 'no') {
+        score += 6;
+        rationale.push('<div class="reco"><strong>At the individual property ceiling.</strong> Both personal self-occupied slots are utilised. The HUF doubles the family\'s shielded count.</div>');
+      }
+
+      const awareRights = get('aware_rights');
+      const awareClubbing = get('aware_clubbing');
+      if (awareRights === 'yes_concern' || awareRights === 'no') {
+        considers.push('<div class="reco"><strong>Coparcenary rights.</strong> All coparceners, including future members, acquire rights in HUF property. Worth discussing in detail with your advisor before formation.</div>');
+      }
+      if (awareClubbing === 'no' || awareClubbing === 'vague') {
+        considers.push('<div class="reco"><strong>Section 64(2) clubbing.</strong> A key provision to understand. Asset transfers from your personal holdings to the HUF without consideration result in income being clubbed in your hands.</div>');
+      }
+
+      const compliance = get('compliance');
+      if (compliance === 'no') {
+        score -= 8;
+        considers.push('<div class="reco note"><strong>Compliance appetite.</strong> An HUF requires a separate PAN, ITR filing, books of account, and karta minutes for major decisions. If administrative simplicity is a priority, this should be weighed carefully.</div>');
+      }
+
+      const partition = get('partition');
+      if (partition === 'no') {
+        considers.push('<div class="reco"><strong>Partition possibility.</strong> Any coparcener may seek partition. Where this is a significant concern, a discretionary Family Trust may be a more suitable alternative.</div>');
+      }
+
+      // Regime optimisation
+      const regimeChoice = recommendRegime(income, get('deduct_level'), hufProp);
+      if (regimeChoice.recommend === 'old') {
+        optim.push('<div class="reco"><strong>HUF return under the OLD regime.</strong> Filing Form 10-IEA to opt out of the default new regime allows access to &#8377;1.5L Section 80C, &#8377;25K Section 80D, &#8377;2L Section 24(b) interest deduction, and 80G donations &mdash; collectively more favourable than the new regime at your profile.</div>');
+      } else {
+        optim.push('<div class="reco"><strong>HUF return under the NEW regime (default).</strong> The &#8377;4L basic exemption and gentler slab ladder outperform the deduction stack at your income/deduction profile. No additional paperwork required, as the new regime is the default from FY 2023&ndash;24 onwards.</div>');
+      }
+
+      // Investment optimisation
+      if (isChecked('inv_equity')) optim.push('<div class="reco"><strong>Equity in the HUF.</strong> Long-term capital gains above &#8377;1.25 lakh are taxed at 12.5% &mdash; the same rate as individual, with the benefit stacking on top of the HUF\'s separate exemption.</div>');
+      if (isChecked('inv_realestate')) optim.push('<div class="reco"><strong>Real estate in the HUF.</strong> Property purchased in the HUF\'s name has rental income taxable within the HUF. Section 24(b) interest deduction is available under the old regime, and the property occupies one of the HUF\'s two self-occupied slots.</div>');
+      if (isChecked('inv_debt')) optim.push('<div class="reco"><strong>Debt instruments.</strong> Fixed deposits and bonds held under the HUF utilise the HUF\'s own basic exemption (&#8377;4L new regime or &#8377;2.5L plus &#8377;1.5L 80C under old) at its own slab.</div>');
+      if (isChecked('inv_insurance')) optim.push('<div class="reco"><strong>HUF as policy proposer.</strong> The HUF may pay life insurance premiums for members and claim Section 80C (old regime only) &mdash; useful where the karta wishes to provide cover funded from HUF income.</div>');
+
+      score = Math.max(0, Math.min(100, score));
+
+      if (score >= 70) {
+        verdict = 'strong';
+        verdictLine = '<em>Well-suited</em> for HUF formation.';
+        verdictBlurb = 'Your profile aligns well with the requirements and benefits of an HUF structure. The suggested optimisations are outlined below.';
+      } else if (score >= 45) {
+        verdict = 'caveat';
+        verdictLine = '<em>Suitable</em>, with points to discuss.';
+        verdictBlurb = 'The structure offers real benefits in your situation, though certain aspects warrant further discussion with your advisor before proceeding.';
+      } else {
+        verdict = 'hold';
+        verdictLine = '<em>Worth reconsidering</em> in detail.';
+        verdictBlurb = 'An HUF may not be the most fitting structure at this stage. Alternative arrangements may better serve your objectives &mdash; please discuss with your advisor.';
+      }
+    }
+
+    // Render
+    const vEl = document.getElementById('verdictLine');
+    vEl.innerHTML = verdictLine;
+    vEl.className = 'verdict-line ' + verdict;
+    document.getElementById('verdictBlurb').textContent = verdictBlurb;
+
+    // Snapshot
+    const name = (form.querySelector('[name="name"]').value || 'Your summary').trim();
+    const city = (form.querySelector('[name="city"]').value || '—').trim();
+    const incomeMap = { low: 'Below ₹7L', mid: '₹7L–₹15L', high: '₹15L–₹50L', vhigh: '₹50L–₹2Cr', uhnw: 'Above ₹2Cr' };
+    const incomeVal = incomeMap[get('income')] || '—';
+    const goalMap = { tax: 'Tax planning', succession: 'Succession', ancestral: 'Ancestral assets', business: 'Family business', property: 'Property holding', mixed: 'Mixed objectives' };
+    const goalVal = goalMap[get('goal')] || '—';
+    const propsMap = { '0': 'None', '1': 'One', '2': 'Two', '3': 'Three', '4plus': 'Four or more' };
+    const propsVal = propsMap[get('props')] || '—';
+
+    document.getElementById('snapGrid').innerHTML =
+      '<div class="snap-cell"><div class="k">Prepared for</div><div class="v">' + name + '</div></div>' +
+      '<div class="snap-cell"><div class="k">Location</div><div class="v">' + city + '</div></div>' +
+      '<div class="snap-cell"><div class="k">Income</div><div class="v">' + incomeVal + '</div></div>' +
+      '<div class="snap-cell"><div class="k">Primary objective</div><div class="v">' + goalVal + '</div></div>' +
+      '<div class="snap-cell"><div class="k">Properties owned</div><div class="v">' + propsVal + '</div></div>';
+
+    // Rationale
+    if (rationale.length === 0) rationale.push('<div class="reco">A detailed rationale will appear here as additional sections are completed.</div>');
+    document.getElementById('rationale').innerHTML = rationale.join('');
+
+    // Regime section (hide if not eligible)
+    const regimeBlock = document.getElementById('regimeBlock');
+    const propertyBlock = document.getElementById('propertyBlock');
+    if (verdict === 'hold' && marital === 'single' && coparceners === 'none') {
+      regimeBlock.style.display = 'none';
+      propertyBlock.style.display = 'none';
+    } else {
+      regimeBlock.style.display = '';
+      propertyBlock.style.display = '';
+      const rec = recommendRegime(get('income'), get('deduct_level'), get('huf_prop'));
+      document.getElementById('regimeRec').innerHTML =
+        '<div class="regime-rec">' +
+        '<div class="label">Suggested for your HUF</div>' +
+        '<div class="title">' + (rec.recommend === 'old' ? 'Old Tax Regime' : 'New Tax Regime (default)') + '</div>' +
+        '<div class="why">' + rec.why + '</div>' +
+        '</div>';
+      document.getElementById('regimeGrid').innerHTML = buildRegimeGrid(rec.recommend);
+      document.getElementById('propertyContent').innerHTML = buildPropertyBlock(get('props'), get('huf_prop'));
+    }
+
+    // Optimisation
+    if (optim.length === 0) optim.push('<div class="reco">Further suggestions will appear here based on completed inputs.</div>');
+    document.getElementById('optimisation').innerHTML = optim.join('');
+
+    // Considerations
+    const considerationsBlock = document.getElementById('considerationsBlock');
+    if (considers.length === 0) {
+      considerationsBlock.style.display = 'none';
+    } else {
+      considerationsBlock.style.display = '';
+      document.getElementById('considerations').innerHTML = considers.join('');
+    }
+
+    // Submit responses to backend
+    submitToBackend(verdict, recommendRegime(get('income'), get('deduct_level'), get('huf_prop')).recommend);
+  }
+
+  /* =================================================================
+     SUBMIT TO GOOGLE SHEETS via Apps Script Web App
+     ================================================================= */
+  const BACKEND_URL = 'PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE';
+
+  function gatherChecked(prefix) {
+    const boxes = form.querySelectorAll('input[type="checkbox"][name^="' + prefix + '"]');
+    const out = [];
+    boxes.forEach(b => { if (b.checked) out.push(b.name.replace(prefix, '')); });
+    return out.join(', ');
+  }
+
+  function submitToBackend(verdict, suggestedRegime) {
+    const statusEl = document.getElementById('submitStatus');
+
+    // Skip if backend not configured
+    if (!BACKEND_URL || BACKEND_URL.indexOf('PASTE_') === 0) {
+      statusEl.textContent = '';
+      return;
+    }
+
+    statusEl.textContent = 'Saving your responses...';
+
+    const payload = {
+      name: form.querySelector('[name="name"]').value || '',
+      email: form.querySelector('[name="email"]').value || '',
+      phone: form.querySelector('[name="phone"]').value || '',
+      city: form.querySelector('[name="city"]').value || '',
+      age: get('age'),
+      marital: get('marital'),
+      children: get('children'),
+      coparceners: get('coparceners'),
+      ancestral: get('ancestral'),
+      income: get('income'),
+      income_sources: gatherChecked('src_'),
+      regime: get('regime'),
+      deduct_level: get('deduct_level'),
+      goal: get('goal'),
+      privacy: get('privacy'),
+      horizon: get('horizon'),
+      corpus: get('corpus'),
+      corpus_size: get('corpus_size'),
+      props: get('props'),
+      huf_prop: get('huf_prop'),
+      investments: gatherChecked('inv_'),
+      aware_rights: get('aware_rights'),
+      aware_clubbing: get('aware_clubbing'),
+      aware_87a: get('aware_87a'),
+      compliance: get('compliance'),
+      partition: get('partition'),
+      verdict: verdict,
+      suggested_regime: suggestedRegime,
+      notes: form.querySelector('[name="notes"]').value || ''
+    };
+
+    fetch(BACKEND_URL, {
+      method: 'POST',
+      mode: 'no-cors',  // Apps Script web apps require no-cors for cross-origin POSTs
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify(payload)
+    })
+    .then(() => {
+      statusEl.textContent = 'Your responses have been saved';
+      statusEl.style.color = 'var(--moss)';
+    })
+    .catch(err => {
+      statusEl.textContent = 'Unable to save responses at this time';
+      statusEl.style.color = 'var(--rust)';
+      console.error('Submission error:', err);
+    });
+  }
+
+  show(1);
+</script>
+</body>
+</html>
